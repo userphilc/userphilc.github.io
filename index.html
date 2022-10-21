@@ -1,35 +1,384 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <style>
-            p {
-                font-size: 1em;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            h1 {
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-            h2 {
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-            h3 {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            div {
-                margin-left: 2em;
-                margin-right: 2em;
-                margin-top: 3em;
-                margin-bottom: 4em;
-            }
-        </style>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>TimeWatch</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body>
-        <div>
-            <p><h1>TimeWatch</h1></p>
-            <p><a href="privacy-policy.html"><h2>Privacy policy</h2></a></p>
-            <p><a href="support.html"><h2>Technical support</h2></a></p>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="#page-top">TimeWatch</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Menu -->
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul id="menu-ul" class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy</a></li>
+                        <li class="nav-item" onclick="sbtnPrepare()"><a id="abc" class="nav-link me-lg-3" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#feedbackModal"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Mashead header-->
+        <header class="masthead">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Mashead text and app badges-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3">TimeWatch</h1>
+                            <p class="lead fw-normal text-muted mb-5">Keep your talk, meeting, presentation or lesson on time. The timer auto-adjusts if you get ahead or fall behind, so you finish on time.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Masthead device mockup feature-->
+                        <div class="masthead-device-mockup">
+                             <div class="device-wrapper">
+                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                    <div class="screen bg-black">
+                                        <!-- PUT CONTENTS HERE:-->
+                                        <!-- * * This can be a video, image, or just about anything else.-->
+                                        <!-- * * Set the max width of your media to 100% and the height to 100% -->
+                                        <img style="max-width: 100%; height: 100%" src="assets/img/screenshot.png"></img>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row align-items-center">
+                        <a class="me-lg-3 mb-3neg mt-store-btn mb-lg-0" href="https://play.google.com/store/apps/details?id=uk.co.goldtooth.timewatch"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                        <a class="mt-store-btn" href="https://apps.apple.com/us/app/timewatch-timer/id1567270530"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Quote/testimonial aside-->
+        <aside class="text-center bg-gradient-primary-to-secondary">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="h2 fs-1 text-white mb-4">"You may delay, but time will not."</div>
+                        <div class="h4 fs-3 text-white mb-4">Benjamin Franklin</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Basic features section-->
+        <section id="features" class="bg-light">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                    <div class="col-12 col-lg-5">
+                        <h2 class="display-4 lh-1 mb-4">Easy to use</h2>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0">
+                            Create a session and schedule the start time.
+                            Add sections and set the duration for each one.
+                            When it's time for you to present your material, start the timer and TimeWatch will track the time you're spending on each section.
+                            You'll see whether you're on time, getting ahead or falling behind.
+                            When you finish each section, TimeWatch will automatically adjust remaining section times and keep you on target for your scheduled finish.</p>
+                    </div>
+                    <div class="col-sm-8 col-md-6">
+                        <div class="px-5-img px-sm-0"><img class="img-fluid" src="assets/img/screenshot2.png" alt="..." /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- App features section-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                        <div class="container-fluid px-5">
+                            <div class="row gx-5">
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center align-content-center justify-content-center">
+                                        <img src="assets/img/gift.svg" class="feature-icon text-gradient mb-3" alt="">
+                                        <h3 class="font-alt">Free version</h3>
+                                        <p class="text-muted mb-0">The free version is all you need if you only give occasional talks.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <img src="assets/img/mortarboard.svg" class="feature-icon text-gradient mb-3" alt="">
+                                        <h3 class="font-alt">Pro version</h3>
+                                        <p class="text-muted mb-0">If you present different material regularly then it's easy to upgrade.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-5 mb-md-0">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <img src="assets/img/signpost-split.svg" class="feature-icon text-gradient mb-3" alt="">
+                                        <h3 class="font-alt">Tips & samples</h3>
+                                        <p class="text-muted mb-0">Try the samples and use the tips to quickly learn the features of the app.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <img src="assets/img/hourglass-split.svg" class="feature-icon text-gradient mb-3" alt="">
+                                        <h3 class="font-alt">Multiple uses</h3>
+                                        <p class="text-muted mb-0">Time your talks, presentations, lessons, meetings and more.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 order-lg-0">
+                        <!-- Features section device mockup-->
+                        <div class="features-device-mockup">
+                            <div class="device-wrapper">
+                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                    <div class="screen bg-black">
+                                        <!-- PUT CONTENTS HERE:-->
+                                        <!-- * * This can be a video, image, or just about anything else.-->
+                                        <!-- * * Set the max width of your media to 100% and the height to 100% -->
+                                        <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%"><source src="assets/img/simulator.mp4" type="video/mp4" /></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action section-->
+        <section class="cta">
+            <div class="cta-content">
+                <div class="container px-5">
+                    <h2 class="text-white display-1 lh-1 mb-4">
+                        Stay on time!
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <!-- App badge section-->
+        <section class="bg-gradient-primary-to-secondary" id="download">
+            <div class="container px-5">
+                <h2 class="text-center text-white font-alt mb-4">Get the app now!</h2>
+                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    <a class="me-lg-3 mb-4 mb-lg-0" href="https://play.google.com/store/apps/details?id=uk.co.goldtooth.timewatch"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                    <a href="https://apps.apple.com/us/app/timewatch-timer/id1567270530"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; Philip Crothers 2022. All Rights Reserved.</div>
+                    <a class="contact-btn" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy</a>
+                    <!-- <span class="mx-1">&middot;</span>
+                    <a href="#!">Terms</a> -->
+                    <span class="mx-1">&middot;</span>
+                    <a onclick="sbtnPrepare()" id="abcd" class="contact-btn" data-bs-toggle="modal" data-bs-target="#feedbackModal"></a>
+                </div>
+            </div>
+        </footer>
+        <!-- Feedback Modal-->
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                        <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Contact details</h5>
+                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0 p-4">
+                        <div class="text-center" id="contactForm">
+                            <div id="subMsg" class="form-floating mb-3">
+                                Please wait one moment ...
+                            </div>
+                            <div class="d-flex justify-content-center align-content-center"><button class="btn btn-primary rounded-pill btn-lg" style="visibility: hidden; max-width: 300px;" id="submitButton" onclick="submit()">Please wait</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Privacy modal -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                        <h5 class="modal-title font-alt text-white" id="privacyModalLabel">Privacy policy</h5>
+                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div>
+                        <div class="privacy-div">
+                            <h1 class="mb-4">TimeWatch app</h1>
+                            <h3>1.	Introduction</h3>
+                            <p>1.1	We are committed to safeguarding the privacy of the users of our application.</p>
+                            <p>1.2	This policy applies where we are acting as a data controller with respect to the personal data of such persons; in other words, where we determine the purposes and means of the processing of that personal data.</p>
+                            <p>1.3	In this policy, "we", "us" and "our" refer to <i>Philip Crothers</i>.</p>
+                            <p>1.4	In this policy, "the application", "our application" and "TimeWatch" refer to the <i>TimeWatch</i> application.</p>
+                            <p>For this website's privacy policy, see the bottom of the page.</p>
+            
+                            <h3>2.	Credit</h3>
+                            <p>2.1	This document was created using a template from Docular (<u><a href="https://seqlegal.com/free-legal-documents/privacy-policy" rel="nofollow">https://seqlegal.com/free-legal-documents/privacy-policy</a></u>).</p>
+            
+                            <h3>3.	The personal data that we collect</h3>
+                            <p>3.1	In this Section 3 we have set out the general categories of personal data that we process and, in the case of personal data that we did not obtain directly from you, information about the source and specific categories of that data.</p>
+                            <p>3.2	We may process information relating to in-app purchases made using our application ("<strong>transaction data</strong>"). The transaction data may include an anonymous app user id, transaction date, expiry date, cancellation date, transaction id, product id and/or other transaction details. The sources of the transaction data are the <i>Apple App Store</i>, the <i>Google Play Store</i> and <i>RevenueCat</i>.</p>
+                            <p>3.3	We may process information contained in or relating to any communication that you send to us or that we send to you ("<strong>communication data</strong>"). The communication data may include the communication content and metadata associated with the communication. The source of the information will be you if you contact us, for example by email, or us if we reply to your communication.</p>
+                            <p>3.4	We may process data enabling us to get in touch with you ("<strong>contact data</strong>"). The contact data may include your name, email address, telephone number, postal address and/or other information you choose to provide to us. The source of the contact data is you.</p>
+                            <p>3.5	We may process data about your use of our application and services ("<strong>usage data</strong>"). The usage data may include your IP address, geographical location, operating system, time of last use and page views as well as other information about errors that may occur in the application. The sources of the usage data are: crash log data from the <i>Apple App Store</i> and/or <i>Google Play Store</i>; purchase history from the <i>Apple App Store</i>, <i>Google Play Store</i> and/or <i>RevenueCat</i>.</p>
+            
+                            <h3>4.	Purposes of processing and legal bases</h3>
+                            <p>4.1	In this Section 4, we have set out the purposes for which we may process personal data and the legal bases of the processing.</p>
+                            <p>4.2	<strong>Operations </strong>- We may process your personal data for the purposes of the fulfilment of purchases, providing our services and providing our application's features. The legal basis for this processing is our legitimate interests, namely the proper administration of our application, services and business.</p>
+                            <p>4.3	<strong>Relationships and communications</strong> - We may process contact data, transaction data and/or communication data for the purposes of managing our relationships, communicating with you (excluding communicating for the purposes of direct marketing) by email, SMS, post, fax and/or telephone, providing support services and complaint handling. The legal basis for this processing is our legitimate interests, namely communications with our application users, service users, individual customers, the maintenance of relationships, and the proper administration of our application, services and business.</p>
+                            <p>4.4	<strong>Research and analysis </strong>- We may process usage data and/or transaction data for the purposes of researching and analysing the use of our application and services, as well as researching and analysing other interactions with our business. The legal basis for this processing is our legitimate interests, namely monitoring, supporting, improving and securing our application, services and business generally.</p>
+                            <p>4.5	<strong>Record keeping </strong>- We may process your personal data for the purposes of creating and maintaining our databases, back-up copies of our databases and our business records generally The legal basis for this processing is our legitimate interests, namely ensuring that we have access to all the information we need to properly and efficiently run our business in accordance with this policy.</p>
+                            <p>4.6	<strong>Security </strong>- We may process your personal data for the purposes of security and the prevention of fraud and other criminal activity. The legal basis of this processing is our legitimate interests, namely the protection of our application, services and business, and the protection of others.</p>
+                            <p>4.7	<strong>Insurance and risk management</strong> - We may process your personal data where necessary for the purposes of obtaining or maintaining insurance coverage, managing risks and/or obtaining professional advice. The legal basis for this processing is our legitimate interests, namely the proper protection of our business against risks.</p>
+                            <p>4.8	<strong>Legal claims</strong> - We may process your personal data where necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others.</p>
+                            <p>4.9	<strong>Legal compliance and vital interests</strong> - We may also process your personal data where such processing is necessary for compliance with a legal obligation to which we are subject or in order to protect your vital interests or the vital interests of another natural person.</p>
+            
+                            <h3>5.	Providing your personal data to others</h3>
+                            <p>5.1	We may disclose your personal data to our insurers and/or professional advisers insofar as reasonably necessary for the purposes of obtaining or maintaining insurance coverage, managing risks, obtaining professional advice.</p>
+                            <p>5.2	Your transaction data will be stored on the servers of our service provider <i>RevenueCat</i> (<u><a href="https://www.revenuecat.com" rel="nofollow">https://www.revenuecat.com</a></u>).</p>
+                            <p>5.3	Financial transactions relating to our application and services are handled by our payment services providers, <i>Apple, Google and RevenueCat</i>. We will share transaction data with our payment services providers only to the extent necessary for the purposes of processing your payments, refunding such payments and dealing with complaints and queries relating to such payments and refunds. You can find information about the payment services providers' privacy policies and practices using the following links:</p>
+                            <p>	<u><a href="https://www.apple.com/uk/legal/privacy/data/en/app-store/" rel="nofollow">App Store privacy policy</a></u></p>
+                            <p>	<u><a href="https://policies.google.com/privacy" rel="nofollow">Google privacy policy</a></u></p>
+                            <p>	<u><a href="https://www.revenuecat.com/privacy" rel="nofollow">RevenueCat privacy policy</a></u></p>
+                            <p>5.4	In addition to the specific disclosures of personal data set out in this Section 5, we may disclose your personal data where such disclosure is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person. We may also disclose your personal data where such disclosure is necessary for the establishment, exercise, or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure.</p>
+            
+                            <h3>6.	International transfers of your personal data</h3>
+                            <p>6.1	In this Section 6, we provide information about the circumstances in which your personal data may be transferred to a third country.</p>
+                            <p>6.2	We may transfer your personal data from the European Economic Area EEA to the UK and process that personal data in the UK for the purposes set out in this policy, and may permit our suppliers and subcontractors to do so, during any period with respect to which the UK is not treated as a third country under EU data protection law or benefits from an adequacy decision under EU data protection law; and we may transfer your personal data from the UK to the EEA and process that personal data in the EEA for the purposes set out in this policy, and may permit our suppliers and subcontractors to do so, during any period with respect to which EEA states are not treated as third countries under UK data protection law or benefit from adequacy regulations under UK data protection law.</p>
+                            <p>6.3	Our service provider, <i>RevenueCat, </i>is based in the <i>United States</i>. Due to the absence of an adequacy determination with respect to the data protection laws of this country, these transfers will be protected by appropriate safeguards, namely the use of standard data protection clauses adopted or approved by the competent data protection authorities, a copy of which can be obtained from <u><a href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?uri=CELEX%3A32021D0914&locale=en" rel="nofollow">here</a></u></p>
+                            <p><i>	See also RevenueCat Data Processing Addendum:</i><i> </i><u><a href="https://www.revenuecat.com/dpa" rel="nofollow">https://www.revenuecat.com/dpa</a></u></p>
+            
+                            <h3>7.	Retaining and deleting personal data</h3>
+                            <p>7.1	This Section 7 sets out our data retention policies and procedures, which are designed to help ensure that we comply with our legal obligations in relation to the retention and deletion of personal data.</p>
+                            <p>7.2	Personal data that we process for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.</p>
+                            <p>7.3	We will retain your personal data as follows:</p>
+                            <p>(a)	contact data will be retained during any period in which it is needed for the purpose of your communication with us (for example a technical support query) and at least until we are reasonably satisfied that the purpose of the communication is completed and that the information is no longer useful for any related issue or query from you that may arise in future. </p>
+                            <p>(b)	communication data will be retained during any period in which it is needed for the purpose of your communication with us (for example a technical support query) and at least until we are reasonably satisfied that the purpose of the communication is completed and that the information is no longer useful for any related issue or query from you that may arise in future. </p>
+                            <p>(c)	transaction data will be retained during any period in which you are using our products and services. We may have access to this data for at least as long as our service providers (<i>Google</i>, <i>Apple</i>, <i>RevenueCat</i>) retain this data on their systems. </p>
+                            <p>(d)	usage data will be retained during any period in which you are using our products and services. We may have access to usage data for at least as long as our service providers (<i>Google</i>, <i>Apple</i>, <i>RevenueCat</i>) retain this data on their systems. </p>
+                            <p>7.4	Notwithstanding the other provisions of this Section 7, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.</p>
+            
+                            <h3>8.	Your rights</h3>
+                            <p>8.1	In this Section 8, we have listed the rights that you have under data protection law.</p>
+                            <p>8.2	Your principal rights under data protection law are:</p>
+                            <p>(a)	<strong>the right to access</strong> - you can ask for copies of your personal data;</p>
+                            <p>(b)	<strong>the right to rectification</strong> - you can ask us to rectify inaccurate personal data and to complete incomplete personal data;</p>
+                            <p>(c)	<strong>the right to erasure</strong> - you can ask us to erase your personal data;</p>
+                            <p>(d)	<strong>the right to restrict processing</strong> - you can ask us to restrict the processing of your personal data;</p>
+                            <p>(e)	<strong>the right to object to processing</strong> - you can object to the processing of your personal data;</p>
+                            <p>(f)	<strong>the right to data portability</strong> - you can ask that we transfer your personal data to another organisation or to you;</p>
+                            <p>(g)	<strong>the right to complain to a supervisory authority</strong> - you can complain about our processing of your personal data; and</p>
+                            <p>(h)	<strong>the right to withdraw consent</strong> - to the extent that the legal basis of our processing of your personal data is consent, you can withdraw that consent.</p>
+                            <p>8.3	These rights are subject to certain limitations and exceptions. You can learn more about the rights of data subjects by visiting <u><a href="https://edpb.europa.eu/our-work-tools/general-guidance/gdpr-guidelines-recommendations-best-practices_en" rel="nofollow">here</a></u> and <u><a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/" rel="nofollow">here</a></u>.</p>
+                            <p>8.4	You may exercise any of your rights in relation to your personal data by written notice to us, using the contact details set out below.</p>
+            
+                            <h3>9.	Amendments</h3>
+                            <p>9.1	We may update this policy from time to time by publishing a new version of this page.</p>
+                            <p>9.2	You should check this page occasionally to ensure you are happy with any changes to this policy.</p>
+            
+                            <h3>10.	Our details</h3>
+                            <p>10.1 The application is owned and operated by <i>Philip Crothers.</i></p>
+                            <p>10.2 You can contact us by email, using the contact link on this website.</p>
+                        </div>
+                    </div>
+                    <div class="web-privacy-section">
+                        <div class="web-privacy-div">
+                            <h1 class="mb-4 mt-5">TimeWatch website</h1>
+                            <h3>1.	Introduction</h3>
+                            <p>1.1	We are committed to safeguarding the privacy of the users of our website.</p>
+                            <p>1.2	This policy applies where we are acting as a data controller with respect to the personal data of such persons; in other words, where we determine the purposes and means of the processing of that personal data.</p>
+                            <p>1.3	In this policy, "we", "us" and "our" refer to <i>Philip Crothers</i>.</p>
+                            <p>1.4	In this policy, "the website", "our website" and "this website" refer to the <i>TimeWatch</i> website.</p>
+                            <p>For the TimeWatch app privacy policy, see the top of the page.</p>
+            
+                            <h3>2.	Credit</h3>
+                            <p>2.1	This document was created using a template from Docular (<u><a href="https://seqlegal.com/free-legal-documents/privacy-policy" rel="nofollow">https://seqlegal.com/free-legal-documents/privacy-policy</a></u>).</p>
+            
+                            <h3>2.	Cookies, analytics and 3rd party links and sources</h3>
+                            <p>2.1  This website does not store any cookies.</p>
+                            <p>2.2  We do not use any analytics on this website.</p>
+                            <p>2.3  This website does load fonts from Google and loads Bootstrap source code from jsDelivr.</p>
+                            <p>2.4  This website does provide links to 3rd party websites including Apple App store, Google Play store and others.</p>
+                            <p>2.5  We cannot guarantee or verify the contents of any externally linked website despite our best efforts. Users should therefore note they click on external links at their own risk and we cannot be held liable for any damages or implications caused by visiting any external links from this website.</p>
+
+
+                            <h3>3.	The personal data that we collect</h3>
+                            <p>3.1  We do not collect any personal data from this website except information that you choose to send us by email using the contact feature.</p>
+                            <p>3.2	We may process information contained in or relating to any communication that you send to us or that we send to you ("<strong>communication data</strong>"). The communication data may include the communication content and metadata associated with the communication. The source of the information will be you if you contact us, for example by email, or us if we reply to your communication.</p>
+                            <p>3.3	We may process data enabling us to get in touch with you ("<strong>contact data</strong>"). The contact data may include your name, email address, telephone number, postal address and/or other information you choose to provide to us. The source of the contact data is you.</p>
+            
+                            <h3>4.	Purposes of processing and legal bases</h3>
+                            <p>4.1	In this Section 4, we have set out the purposes for which we may process personal data and the legal bases of the processing.</p>
+                            <p>4.2	<strong>Operations </strong>- We may process your personal data for the purposes of the fulfilment of purchases, providing our services and providing our application's features. The legal basis for this processing is our legitimate interests, namely the proper administration of our application, services and business.</p>
+                            <p>4.3	<strong>Relationships and communications</strong> - We may process contact data and/or communication data for the purposes of managing our relationships, communicating with you (excluding communicating for the purposes of direct marketing) by email, SMS, post, fax and/or telephone, providing support services and complaint handling. The legal basis for this processing is our legitimate interests, namely communications with our application users, service users, individual customers, the maintenance of relationships, and the proper administration of our application, services and business.</p>
+                            <p>4.4	<strong>Research and analysis </strong>- We may process communication data for the purposes of researching and analysing the use of our application and services, as well as researching and analysing other interactions with our business. The legal basis for this processing is our legitimate interests, namely monitoring, supporting, improving and securing our application, services and business generally.</p>
+                            <p>4.5	<strong>Record keeping </strong>- We may process your personal data for the purposes of creating and maintaining our databases, back-up copies of our databases and our business records generally The legal basis for this processing is our legitimate interests, namely ensuring that we have access to all the information we need to properly and efficiently run our business in accordance with this policy.</p>
+                            <p>4.6	<strong>Security </strong>- We may process your personal data for the purposes of security and the prevention of fraud and other criminal activity. The legal basis of this processing is our legitimate interests, namely the protection of our application, services and business, and the protection of others.</p>
+                            <p>4.7	<strong>Insurance and risk management</strong> - We may process your personal data where necessary for the purposes of obtaining or maintaining insurance coverage, managing risks and/or obtaining professional advice. The legal basis for this processing is our legitimate interests, namely the proper protection of our business against risks.</p>
+                            <p>4.8	<strong>Legal claims</strong> - We may process your personal data where necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others.</p>
+                            <p>4.9	<strong>Legal compliance and vital interests</strong> - We may also process your personal data where such processing is necessary for compliance with a legal obligation to which we are subject or in order to protect your vital interests or the vital interests of another natural person.</p>
+            
+                            <h3>5.	Providing your personal data to others</h3>
+                            <p>5.1	We may disclose your personal data to our insurers and/or professional advisers insofar as reasonably necessary for the purposes of obtaining or maintaining insurance coverage, managing risks, obtaining professional advice.</p>
+                            <p>5.2	In addition to the specific disclosures of personal data set out in this Section 5, we may disclose your personal data where such disclosure is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person. We may also disclose your personal data where such disclosure is necessary for the establishment, exercise, or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure.</p>
+            
+                            <h3>6.	Retaining and deleting personal data</h3>
+                            <p>6.1	This Section 6 sets out our data retention policies and procedures, which are designed to help ensure that we comply with our legal obligations in relation to the retention and deletion of personal data.</p>
+                            <p>6.2	Personal data that we process for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.</p>
+                            <p>6.3	We will retain your personal data as follows:</p>
+                            <p>(a)	contact data will be retained during any period in which it is needed for the purpose of your communication with us (for example a technical support query) and at least until we are reasonably satisfied that the purpose of the communication is completed and that the information is no longer useful for any related issue or query from you that may arise in future. </p>
+                            <p>(b)	communication data will be retained during any period in which it is needed for the purpose of your communication with us (for example a technical support query) and at least until we are reasonably satisfied that the purpose of the communication is completed and that the information is no longer useful for any related issue or query from you that may arise in future. </p>
+                            <p>6.4	Notwithstanding the other provisions of this Section 6, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.</p>
+            
+                            <h3>7.	Your rights</h3>
+                            <p>7.1	In this Section 7, we have listed the rights that you have under data protection law.</p>
+                            <p>7.2	Your principal rights under data protection law are:</p>
+                            <p>(a)	<strong>the right to access</strong> - you can ask for copies of your personal data;</p>
+                            <p>(b)	<strong>the right to rectification</strong> - you can ask us to rectify inaccurate personal data and to complete incomplete personal data;</p>
+                            <p>(c)	<strong>the right to erasure</strong> - you can ask us to erase your personal data;</p>
+                            <p>(d)	<strong>the right to restrict processing</strong> - you can ask us to restrict the processing of your personal data;</p>
+                            <p>(e)	<strong>the right to object to processing</strong> - you can object to the processing of your personal data;</p>
+                            <p>(f)	<strong>the right to data portability</strong> - you can ask that we transfer your personal data to another organisation or to you;</p>
+                            <p>(g)	<strong>the right to complain to a supervisory authority</strong> - you can complain about our processing of your personal data; and</p>
+                            <p>(h)	<strong>the right to withdraw consent</strong> - to the extent that the legal basis of our processing of your personal data is consent, you can withdraw that consent.</p>
+                            <p>7.3	These rights are subject to certain limitations and exceptions. You can learn more about the rights of data subjects by visiting <u><a href="https://edpb.europa.eu/our-work-tools/general-guidance/gdpr-guidelines-recommendations-best-practices_en" rel="nofollow">here</a></u> and <u><a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/" rel="nofollow">here</a></u>.</p>
+                            <p>7.4	You may exercise any of your rights in relation to your personal data by written notice to us, using the contact details set out below.</p>
+            
+                            <h3>8.	Amendments</h3>
+                            <p>8.1	We may update this policy from time to time by publishing a new version of this page.</p>
+                            <p>8.2	You should check this page occasionally to ensure you are happy with any changes to this policy.</p>
+            
+                            <h3>9.	Our details</h3>
+                            <p>9.1 The website is owned and operated by <i>Philip Crothers.</i></p>
+                            <p>9.2 You can contact us by email, using the contact link on this website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
